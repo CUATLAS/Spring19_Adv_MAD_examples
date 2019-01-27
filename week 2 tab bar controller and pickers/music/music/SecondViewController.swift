@@ -30,16 +30,16 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    //Picker Delegate methods
-    //returns the title for the row
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return genre[row]
-        } else {
-            return decade[row]
+        //Picker Delegate methods
+        //returns the title for the row
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            if component == 0 {
+                return genre[row]
+            } else {
+                return decade[row]
+            }
+            
         }
-        
-    }
     
     //Called when a row is selected
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

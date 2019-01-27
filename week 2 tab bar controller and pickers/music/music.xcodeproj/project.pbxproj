@@ -19,6 +19,7 @@
 		75D1BB601C4D9E7200B3ACB9 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D1BB5F1C4D9E7200B3ACB9 /* FourthViewController.swift */; };
 		75D5482621F931F200C52113 /* ArtistAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5482521F931F200C52113 /* ArtistAlbums.swift */; };
 		75D5482A21F940B600C52113 /* artistalbums2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D5482921F940B600C52113 /* artistalbums2.plist */; };
+		75D5484E21FBD4B200C52113 /* ArtistAlbumsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5484D21FBD4B200C52113 /* ArtistAlbumsController.swift */; };
 		75F6F199201B8526003D4C2A /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6F198201B8526003D4C2A /* FifthViewController.swift */; };
 		75F6F19C201B873D003D4C2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F6F19B201B873D003D4C2A /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		75D1BB5F1C4D9E7200B3ACB9 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		75D5482521F931F200C52113 /* ArtistAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbums.swift; sourceTree = "<group>"; };
 		75D5482921F940B600C52113 /* artistalbums2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = artistalbums2.plist; path = ../../../plists/artistalbums2.plist; sourceTree = "<group>"; };
+		75D5484D21FBD4B200C52113 /* ArtistAlbumsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistAlbumsController.swift; sourceTree = "<group>"; };
 		75F6F198201B8526003D4C2A /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		75F6F19B201B873D003D4C2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				75D1BB2F1C4C384600B3ACB9 /* SecondViewController.swift */,
 				75D1BB5B1C4D48F400B3ACB9 /* ThirdViewController.swift */,
 				75D5482521F931F200C52113 /* ArtistAlbums.swift */,
+				75D5484D21FBD4B200C52113 /* ArtistAlbumsController.swift */,
 				75D1BB5F1C4D9E7200B3ACB9 /* FourthViewController.swift */,
 				75F6F198201B8526003D4C2A /* FifthViewController.swift */,
 				75D1BB311C4C384600B3ACB9 /* Main.storyboard */,
@@ -297,6 +300,7 @@
 				75D1BB2C1C4C384600B3ACB9 /* AppDelegate.swift in Sources */,
 				75D1BB5C1C4D48F400B3ACB9 /* ThirdViewController.swift in Sources */,
 				75D1BB2E1C4C384600B3ACB9 /* FirstViewController.swift in Sources */,
+				75D5484E21FBD4B200C52113 /* ArtistAlbumsController.swift in Sources */,
 				75D1BB601C4D9E7200B3ACB9 /* FourthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

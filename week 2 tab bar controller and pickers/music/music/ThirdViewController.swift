@@ -16,29 +16,15 @@ class ThirdViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     let artistComponent = 0
     let albumComponent = 1
     
-    var artistAlbums = [ArtistAlbums]()
+    var artistAlbums = ArtistAlbumsController()
     var artists = [String]()
     var albums = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // URL for our plist
-        if let pathURL = Bundle.main.url(forResource: "artistalbums2", withExtension: "plist"){
-            //creates a property list decoder object
-            let plistdecoder = PropertyListDecoder()
-            do {
-                let data = try Data(contentsOf: pathURL)
-                //decodes the property list
-                artistAlbums = try plistdecoder.decode([ArtistAlbums].self, from: data)
-                for artist in artistAlbums{
-                    artists.append(artist.name)
-                }
-                albums = artistAlbums[0].albums
-            } catch {
-                // handle error
-                print(error)
-            }
-        }
+        artistAlbums.loadData()
+        artists=artistAlbums.getArtists()
+        albums=artistAlbums.getAlbums(index: 0)
     }
     
     //Methods to implement the picker
@@ -69,7 +55,7 @@ class ThirdViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //checks which component was picked
         if component == artistComponent {
-            albums = artistAlbums[row].albums //gets the albums for the selected artist
+            albums = artistAlbums.getAlbums(index: row) //gets the albums for the selected artist
             artistPicker.reloadComponent(albumComponent) //reload the album component
             artistPicker.selectRow(0, inComponent: albumComponent, animated: true) //set the album component back to 0
         }
