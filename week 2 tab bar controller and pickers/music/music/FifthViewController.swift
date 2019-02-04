@@ -17,6 +17,7 @@ class FifthViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     @IBOutlet weak var playButton: UIButton!
     
     var audioPlayer: AVAudioPlayer?
+
     var audioRecorder: AVAudioRecorder?
     let fileName = "audio.m4a"
     
@@ -82,7 +83,7 @@ class FifthViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
         let audioSession = AVAudioSession.sharedInstance() //the shared audio session instance
         do {
             //sets he category for recording and playback of audio
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .init(rawValue: 1))
         } catch {
             print("audio session error: \(error.localizedDescription)")
         }
