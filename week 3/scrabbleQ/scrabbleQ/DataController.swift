@@ -10,7 +10,7 @@ import Foundation
 
 class DataController {
     var qnouWords = [String]()
-    let fileName = "`"
+    let fileName = "qwordswithoutu1"
     
     func loadData(){
         // URL for our plist
