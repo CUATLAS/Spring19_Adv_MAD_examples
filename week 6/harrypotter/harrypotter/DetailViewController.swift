@@ -15,17 +15,18 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var webSpinner: UIActivityIndicatorView!
     
-    var detailItem: String? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
+    var detailItem: String?
+//    {
+//        didSet {
+//            // Update the view.
+//            self.configureView()
+//        }
+//    }
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
+        if let detail = detailItem {
+            if let label = detailDescriptionLabel {
                 label.text = detail.description
                 loadWebPage(detail.description)
             }
@@ -36,7 +37,7 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         webView.navigationDelegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        configureView()
     }
 
     func loadWebPage(_ urlString: String){
