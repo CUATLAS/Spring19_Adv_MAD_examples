@@ -22,8 +22,8 @@ class GroceryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        groceryData.onDataUpdate = {[weak self] (data:[Grocery]) in self?.render()}
         groceryData.dbSetup()
+        groceryList=groceryData.getGroceries()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,6 +55,7 @@ class GroceryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let boughtItem = groceryList[indexPath.row]
         groceryData.boughtItem(item: boughtItem)
+        render()
     }
 
     // Override to support conditional editing of the table view.
@@ -68,6 +69,7 @@ class GroceryTableViewController: UITableViewController {
         if editingStyle == .delete {
             let item = groceryList[indexPath.row]
             groceryData.deleteItem(item: item)
+            render()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -87,6 +89,7 @@ class GroceryTableViewController: UITableViewController {
             newGroceryItem.name = newitem.text! //set name with textfield text
             newGroceryItem.bought = false
             self.groceryData.addItem(newItem: newGroceryItem)
+            self.render()
         })
         addalert.addAction(addItemAction)
         present(addalert, animated: true, completion: nil)

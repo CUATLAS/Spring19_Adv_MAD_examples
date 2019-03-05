@@ -10,25 +10,21 @@ import Foundation
 import RealmSwift
 
 class GroceryDataController {
-    var myRealm : Realm!  //Realm database instance
+    var myRealm1 : Realm!  //Realm database instance
     var groceryData: Results<Grocery> //collection of Objects
     {
         get {
-            return myRealm.objects(Grocery.self) //returns all Grocery objects from Realm
+            return myRealm1.objects(Grocery.self) //returns all Grocery objects from Realm
         }
     }
-    //property with a closure as its value
-    //closure takes an array of Grocery as its parameter and Void as its return type
-    var onDataUpdate: ((_ data: [Grocery]) -> Void)?
     
     func dbSetup(){
         //initialize the Realm database
         do {
-            myRealm = try Realm()
+            myRealm1 = try Realm()
         } catch let error {
             print(error.localizedDescription)
         }
-        onDataUpdate?(Array(groceryData)) //converts collection of Objects to an Array
         print(Realm.Configuration.defaultConfiguration.fileURL!) //prints location of Realm database
     }
     
@@ -36,29 +32,33 @@ class GroceryDataController {
         return Array(groceryData)
     }
     
-    func deleteItem(item: Grocery){
-        try! self.myRealm.write {
-            self.myRealm.delete(item) //delete from realm database
-        }
-        onDataUpdate?(Array(groceryData))
-    }
-
     func addItem(newItem:Grocery){
         do {
-            try self.myRealm.write({
-                self.myRealm.add(newItem) //add to realm database
+            try self.myRealm1.write({
+                self.myRealm1.add(newItem) //add to realm database
             })
         } catch let error{
             print(error.localizedDescription)
         }
-        onDataUpdate?(Array(groceryData))
     }
     
     func boughtItem(item: Grocery){
-        try! self.myRealm.write {
-            item.bought = !item.bought
+        do {
+            try self.myRealm1.write ({
+                item.bought = !item.bought
+            })
+        }catch let error{
+            print(error.localizedDescription)
         }
-        onDataUpdate?(Array(groceryData))
     }
     
+    func deleteItem(item: Grocery){
+        do {
+            try self.myRealm1.write ({
+                self.myRealm1.delete(item) //delete from realm database
+            })
+        } catch let error{
+            print(error.localizedDescription)
+        }
+    }
 }
