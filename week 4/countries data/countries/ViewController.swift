@@ -23,7 +23,7 @@ class ViewController: UITableViewController {
         //application instance
         let app = UIApplication.shared
         //subscribe to the UIApplicationWillResignActiveNotification notification
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.applicationWillResignActive(_:)), name: NSNotification.Name.UIApplicationWillResignActive, object: app)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.applicationWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: app)
     }
     
     //Required methods for UITableViewDataSource
