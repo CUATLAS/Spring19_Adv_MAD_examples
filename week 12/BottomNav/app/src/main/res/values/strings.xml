@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BottomNav</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Home fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="dashboard_fragment">Dashboard fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="notifications_fragment">Notifications fragment</string>
+</resources>
